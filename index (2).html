@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Joint Pain Management Webinar — BluLumen Pro</title>
+<meta name="description" content="Free live webinar: Joint Pain Management. June 26, 2026 at 5:00 PM Eastern. Learn drug-free, non-invasive relief options from BluLumen Pro." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0D2340;
+    --blue:#1565C0;
+    --sky:#87CEFA;
+    --light-blue:#EEF6FF;
+    --gold:#D4A017;
+    --dark-navy:#1A1A2E;
+    --slate:#4A5568;
+    --border-blue:#C8DAEA;
+    --white:#FFFFFF;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Source Sans 3', Arial, sans-serif;
+    font-size:20px;
+    line-height:1.75;
+    color:var(--dark-navy);
+    background:var(--white);
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Merriweather', Georgia, serif;}
+  a{color:var(--blue);}
+  img{max-width:100%;display:block;}
+  .container{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+  /* Skip link for keyboard users */
+  .skip-link{position:absolute;left:-999px;top:auto;}
+  .skip-link:focus{left:16px;top:16px;background:var(--gold);color:var(--navy);padding:10px 16px;border-radius:8px;z-index:999;font-weight:700;}
+
+  :focus-visible{outline:3px solid var(--gold); outline-offset:3px;}
+
+  /* ── TOP BAR ── */
+  .topbar{
+    background:var(--navy);
+    color:var(--white);
+    text-align:center;
+    padding:12px 20px;
+    font-size:17px;
+    font-weight:600;
+    letter-spacing:.02em;
+  }
+  .topbar strong{color:var(--gold);}
+
+  /* ── HEADER ── */
+  header{
+    background:var(--white);
+    border-bottom:1px solid var(--border-blue);
+    padding:18px 0;
+  }
+  .header-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .logo{
+    font-family:'Merriweather', serif;
+    font-weight:900;
+    font-size:26px;
+    color:var(--navy);
+    text-decoration:none;
+    letter-spacing:-.01em;
+  }
+  .logo span{color:var(--blue);}
+  .header-cta{
+    background:var(--gold);
+    color:var(--navy);
+    font-weight:700;
+    padding:12px 22px;
+    border-radius:8px;
+    text-decoration:none;
+    font-size:17px;
+    white-space:nowrap;
+  }
+  .header-cta:hover{background:#bd8e14;}
+
+  /* ── HERO ── */
+  .hero{
+    background:linear-gradient(160deg, var(--navy) 0%, #123459 60%, var(--blue) 100%);
+    color:var(--white);
+    padding:64px 0 56px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    right:-120px; top:-120px;
+    width:420px; height:420px;
+    background:radial-gradient(circle, rgba(135,206,250,0.18) 0%, transparent 70%);
+    border-radius:50%;
+  }
+  .hero-inner{
+    position:relative;
+    z-index:1;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:48px;
+    align-items:center;
+  }
+  .eyebrow{
+    display:inline-block;
+    background:rgba(212,160,23,0.18);
+    border:1px solid var(--gold);
+    color:var(--gold);
+    font-weight:700;
+    font-size:15px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    padding:7px 16px;
+    border-radius:999px;
+    margin-bottom:20px;
+  }
+  .hero h1{
+    font-size:44px;
+    line-height:1.18;
+    font-weight:900;
+    margin-bottom:18px;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--sky);
+  }
+  .hero-sub{
+    font-size:21px;
+    line-height:1.6;
+    color:#DCEBFB;
+    max-width:540px;
+    margin-bottom:30px;
+  }
+  .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;align-items:center;}
+  .btn-primary{
+    background:var(--gold);
+    color:var(--navy);
+    font-weight:700;
+    font-size:19px;
+    padding:18px 34px;
+    border-radius:10px;
+    text-decoration:none;
+    display:inline-block;
+    box-shadow:0 8px 24px rgba(0,0,0,0.25);
+  }
+  .btn-primary:hover{background:#bd8e14;}
+  .hero-note{
+    font-size:16px;
+    color:#AFC9E5;
+  }
+
+  /* ── TICKET / DATE BLOCK (signature element) ── */
+  .ticket{
+    background:var(--white);
+    border-radius:16px;
+    color:var(--dark-navy);
+    box-shadow:0 20px 50px rgba(0,0,0,0.35);
+    overflow:hidden;
+    position:relative;
+  }
+  .ticket-top{
+    background:var(--light-blue);
+    padding:22px 26px 18px;
+    text-align:center;
+    border-bottom:2px dashed var(--border-blue);
+  }
+  .ticket-top .label{
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--blue);
+    margin-bottom:6px;
+  }
+  .ticket-top .event-name{
+    font-family:'Merriweather', serif;
+    font-weight:700;
+    font-size:21px;
+    color:var(--navy);
+  }
+  .ticket-notch-l, .ticket-notch-r{
+    position:absolute;
+    width:24px; height:24px;
+    background:var(--navy);
+    border-radius:50%;
+    top:128px;
+  }
+  .ticket-notch-l{left:-12px;}
+  .ticket-notch-r{right:-12px;}
+  .ticket-body{
+    padding:26px;
+    text-align:center;
+  }
+  .ticket-date{
+    font-family:'Merriweather', serif;
+    font-weight:900;
+    font-size:38px;
+    color:var(--navy);
+    line-height:1.1;
+  }
+  .ticket-year{
+    font-size:18px;
+    font-weight:600;
+    color:var(--slate);
+    margin-bottom:14px;
+  }
+  .ticket-time{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--light-blue);
+    border:1px solid var(--border-blue);
+    border-radius:999px;
+    padding:10px 20px;
+    font-weight:700;
+    font-size:19px;
+    color:var(--navy);
+    margin-bottom:16px;
+  }
+  .ticket-tz{
+    font-size:15px;
+    color:var(--slate);
+  }
+  .ticket-countdown{
+    border-top:1px solid var(--border-blue);
+    margin-top:18px;
+    padding-top:16px;
+    font-size:14px;
+    color:var(--slate);
+    font-weight:600;
+    letter-spacing:.02em;
+  }
+  #countdown-value{color:var(--blue); font-weight:700;}
+
+  /* ── SECTION shared ── */
+  section{padding:64px 0;}
+  .section-eyebrow{
+    text-align:center;
+    font-size:15px;
+    font-weight:700;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--blue);
+    margin-bottom:10px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:34px;
+    font-weight:900;
+    color:var(--navy);
+    margin-bottom:18px;
+  }
+  .section-lead{
+    text-align:center;
+    font-size:20px;
+    color:var(--slate);
+    max-width:680px;
+    margin:0 auto 44px;
+  }
+
+  /* ── LEARN GRID ── */
+  .learn{background:var(--light-blue);}
+  .learn-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:28px;
+  }
+  .learn-card{
+    background:var(--white);
+    border:1px solid var(--border-blue);
+    border-radius:14px;
+    padding:30px 26px;
+  }
+  .learn-icon{
+    width:54px;height:54px;
+    border-radius:12px;
+    background:var(--navy);
+    color:var(--sky);
+    display:flex;align-items:center;justify-content:center;
+    font-size:26px;
+    margin-bottom:18px;
+  }
+  .learn-card h3{
+    font-size:21px;
+    color:var(--navy);
+    margin-bottom:10px;
+    font-weight:700;
+  }
+  .learn-card p{font-size:18px; color:var(--slate);}
+
+  /* ── HOST / CREDIBILITY ── */
+  .host{
+    display:grid;
+    grid-template-columns:.85fr 1.15fr;
+    gap:48px;
+    align-items:center;
+  }
+  .host-badge{
+    background:var(--navy);
+    color:var(--white);
+    border-radius:16px;
+    padding:36px 30px;
+    text-align:center;
+  }
+  .host-badge .who{
+    font-family:'Merriweather', serif;
+    font-size:24px;
+    font-weight:700;
+    margin-bottom:6px;
+  }
+  .host-badge .role{
+    color:var(--sky);
+    font-size:16px;
+    font-weight:600;
+    margin-bottom:18px;
+  }
+  .host-badge .badge-row{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:18px;
+  }
+  .pill{
+    background:rgba(135,206,250,0.15);
+    border:1px solid var(--sky);
+    color:var(--sky);
+    font-size:13px;
+    font-weight:700;
+    padding:6px 14px;
+    border-radius:999px;
+  }
+  .host-copy h2{
+    font-size:30px;
+    color:var(--navy);
+    margin-bottom:16px;
+    font-weight:900;
+  }
+  .host-copy p{font-size:19px; color:var(--slate); margin-bottom:16px;}
+  .host-list{list-style:none;}
+  .host-list li{
+    display:flex;
+    gap:12px;
+    margin-bottom:12px;
+    font-size:18px;
+    color:var(--dark-navy);
+  }
+  .host-list li::before{
+    content:"✓";
+    color:var(--blue);
+    font-weight:900;
+    flex-shrink:0;
+  }
+
+  /* ── REGISTRATION ── */
+  .register{
+    background:linear-gradient(160deg, var(--navy) 0%, #123459 100%);
+    color:var(--white);
+  }
+  .register .section-title{color:var(--white);}
+  .register .section-lead{color:#C8DAEA;}
+  .register-wrap{
+    background:var(--white);
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 24px 60px rgba(0,0,0,0.3);
+    max-width:720px;
+    margin:0 auto;
+  }
+  .register-wrap iframe{
+    width:100%;
+    height:760px;
+    border:none;
+    display:block;
+  }
+  .register-fallback{
+    text-align:center;
+    margin-top:24px;
+    font-size:16px;
+    color:#C8DAEA;
+  }
+  .register-fallback a{color:var(--sky); font-weight:700;}
+
+  /* ── FAQ ── */
+  .faq-list{max-width:760px; margin:0 auto;}
+  details{
+    background:var(--white);
+    border:1px solid var(--border-blue);
+    border-radius:10px;
+    padding:18px 22px;
+    margin-bottom:14px;
+  }
+  summary{
+    font-size:19px;
+    font-weight:700;
+    color:var(--navy);
+    cursor:pointer;
+    list-style:none;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  summary::after{
+    content:"+";
+    font-size:24px;
+    color:var(--blue);
+    font-weight:400;
+    margin-left:12px;
+  }
+  details[open] summary::after{content:"–";}
+  .faq-answer{
+    margin-top:12px;
+    font-size:18px;
+    color:var(--slate);
+    line-height:1.7;
+  }
+
+  /* ── STICKY MOBILE CTA ── */
+  .sticky-cta{
+    display:none;
+    position:fixed;
+    bottom:0; left:0; right:0;
+    background:var(--navy);
+    padding:14px 18px;
+    z-index:90;
+    box-shadow:0 -6px 20px rgba(0,0,0,0.25);
+  }
+  .sticky-cta a{
+    display:block;
+    text-align:center;
+    background:var(--gold);
+    color:var(--navy);
+    font-weight:700;
+    font-size:18px;
+    padding:14px;
+    border-radius:10px;
+    text-decoration:none;
+  }
+
+  /* ── FOOTER ── */
+  footer{
+    background:var(--dark-navy);
+    color:#9FB3C8;
+    text-align:center;
+    padding:36px 20px;
+    font-size:15px;
+  }
+  footer a{color:var(--sky);}
+
+  /* ── RESPONSIVE ── */
+  @media (max-width:880px){
+    .hero-inner{grid-template-columns:1fr; gap:36px;}
+    .hero h1{font-size:34px;}
+    .learn-grid{grid-template-columns:1fr;}
+    .host{grid-template-columns:1fr;}
+    body{padding-bottom:78px;}
+    .sticky-cta{display:block;}
+    .register-wrap iframe{height:820px;}
+  }
+  @media (max-width:480px){
+    .hero{padding:48px 0 40px;}
+    .hero h1{font-size:28px;}
+    .ticket-date{font-size:30px;}
+    .section-title{font-size:27px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+  }
+</style>
+</head>
+<body>
+
+<a href="#register" class="skip-link">Skip to registration</a>
+
+<div class="topbar">🔵 LIVE WEBINAR — <strong>Friday, June 26, 2026 · 5:00 PM Eastern</strong> — Seats are limited</div>
+
+<header>
+  <div class="container header-inner">
+    <a href="https://blulumenpro.shop" class="logo">BluLumen<span>Pro</span></a>
+    <a href="#register" class="header-cta">Reserve My Seat</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div>
+      <span class="eyebrow">Free Live Webinar</span>
+      <h1>Joint Pain Management:<br>Relief Without Drugs <em>or Surgery</em></h1>
+      <p class="hero-sub">
+        Join us live to learn how a simple, drug-free light therapy is helping people manage knee and shoulder joint pain
+        at home — no needles, no downtime, no prescriptions.
+      </p>
+      <div class="hero-ctas">
+        <a href="#register" class="btn-primary">Save My Free Seat →</a>
+      </div>
+      <p class="hero-note" style="margin-top:18px;">Live online · Limited spots · Replay not guaranteed</p>
+    </div>
+
+    <div class="ticket">
+      <div class="ticket-notch-l"></div>
+      <div class="ticket-notch-r"></div>
+      <div class="ticket-top">
+        <div class="label">Admit One — Free Registration</div>
+        <div class="event-name">Joint Pain Management Webinar</div>
+      </div>
+      <div class="ticket-body">
+        <div class="ticket-date">June 26</div>
+        <div class="ticket-year">Friday · 2026</div>
+        <div class="ticket-time">🕔 5:00 PM</div>
+        <div class="ticket-tz">Eastern Time (ET)</div>
+        <div class="ticket-countdown">Starts in <span id="countdown-value">—</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="learn">
+  <div class="container">
+    <p class="section-eyebrow">What You'll Learn</p>
+    <h2 class="section-title">In Just One Hour, We'll Cover</h2>
+    <p class="section-lead">A focused, practical session built for people dealing with everyday knee and shoulder joint pain — no medical jargon, just clear answers.</p>
+
+    <div class="learn-grid">
+      <div class="learn-card">
+        <div class="learn-icon">💡</div>
+        <h3>How Blue Light Therapy Works</h3>
+        <p>The simple science behind how light-based therapy may help calm joint discomfort, explained in plain terms.</p>
+      </div>
+      <div class="learn-card">
+        <div class="learn-icon">🦵</div>
+        <h3>Targeting Knee &amp; Shoulder Pain</h3>
+        <p>Practical guidance on using wearable devices for two of the most common problem areas as we age.</p>
+      </div>
+      <div class="learn-card">
+        <div class="learn-icon">❓</div>
+        <h3>Live Q&amp;A</h3>
+        <p>Bring your questions. We'll leave time at the end to answer them directly, live.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="host">
+  <div class="container host" style="display:grid;">
+    <div class="host-badge">
+      <div class="who">BluLumen Pro</div>
+      <div class="role">Barnes Labs LLC</div>
+      <p style="font-size:16px; color:#DCEBFB; line-height:1.6;">
+        Makers of drug-free, non-invasive blue light wearables for everyday joint pain.
+      </p>
+      <div class="badge-row">
+        <span class="pill">Drug-Free</span>
+        <span class="pill">Non-Invasive</span>
+        <span class="pill">Made in USA</span>
+      </div>
+    </div>
+    <div class="host-copy">
+      <h2>Why This Webinar Is Worth Your Hour</h2>
+      <p>
+        If joint pain has slowed you down or made you hesitant about medication and procedures, this session
+        is built for you. We'll walk through what blue light therapy is, who it tends to help, and how to know
+        if it's worth trying for your own knees or shoulders.
+      </p>
+      <ul class="host-list">
+        <li>No cost to attend, and no obligation to buy anything</li>
+        <li>Clear, straightforward explanations — not a sales pitch</li>
+        <li>Time set aside for your specific questions</li>
+        <li>A simple recap of next steps if you'd like to try BluLumen Pro</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="register" id="register">
+  <div class="container">
+    <p class="section-eyebrow">Reserve Your Spot</p>
+    <h2 class="section-title">Register for the Webinar</h2>
+    <p class="section-lead">It takes less than a minute. Enter your details below to save your seat for June 26th at 5:00 PM Eastern.</p>
+
+    <div class="register-wrap">
+      <iframe
+        src="https://tally.so/r/XxM8WV"
+        title="Joint Pain Management Webinar Registration"
+        loading="lazy">
+      </iframe>
+    </div>
+    <p class="register-fallback">
+      Having trouble with the form? <a href="https://tally.so/r/XxM8WV" target="_blank" rel="noopener">Open registration in a new tab</a>.
+    </p>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="container">
+    <p class="section-eyebrow">Common Questions</p>
+    <h2 class="section-title">Frequently Asked Questions</h2>
+
+    <div class="faq-list">
+      <details open>
+        <summary>Is the webinar really free?</summary>
+        <div class="faq-answer">Yes. There is no cost to register or attend. We simply ask that you save your seat in advance since space is limited.</div>
+      </details>
+      <details>
+        <summary>What time does it start in my time zone?</summary>
+        <div class="faq-answer">The webinar starts at 5:00 PM Eastern Time on Friday, June 26, 2026. That's 4:00 PM Central, 3:00 PM Mountain, and 2:00 PM Pacific.</div>
+      </details>
+      <details>
+        <summary>How will I join the webinar?</summary>
+        <div class="faq-answer">After you register, you'll receive an email with the link to join. Keep an eye on your inbox (and spam folder) in the days leading up to the event.</div>
+      </details>
+      <details>
+        <summary>Will there be a replay if I can't attend live?</summary>
+        <div class="faq-answer">We recommend attending live since a replay is not guaranteed. Registering now is the best way to make sure you don't miss it.</div>
+      </details>
+      <details>
+        <summary>Do I need any special equipment?</summary>
+        <div class="faq-answer">No. You can join from a computer, tablet, or smartphone with an internet connection. No downloads are required.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2026 BluLumen Pro — Barnes Labs LLC. All rights reserved.</p>
+    <p style="margin-top:8px;">Questions? Email <a href="mailto:support@blulumenpro.shop">support@blulumenpro.shop</a></p>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a href="#register">Reserve My Free Seat →</a>
+</div>
+
+<script>
+  // Countdown to June 26, 2026, 5:00 PM Eastern Time
+  (function(){
+    var target = new Date("2026-06-26T17:00:00-04:00").getTime();
+    var el = document.getElementById('countdown-value');
+    if(!el) return;
+
+    function update(){
+      var now = new Date().getTime();
+      var diff = target - now;
+      if(diff <= 0){
+        el.textContent = "Live now";
+        clearInterval(timer);
+        return;
+      }
+      var days = Math.floor(diff / (1000*60*60*24));
+      var hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+      var mins = Math.floor((diff % (1000*60*60)) / (1000*60));
+
+      if(days > 0){
+        el.textContent = days + "d " + hours + "h";
+      } else if(hours > 0){
+        el.textContent = hours + "h " + mins + "m";
+      } else {
+        el.textContent = mins + "m";
+      }
+    }
+    update();
+    var timer = setInterval(update, 60000);
+  })();
+</script>
+
+</body>
+</html>
